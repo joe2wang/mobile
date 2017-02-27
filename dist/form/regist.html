@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="UTF-8"><script src="../../assets/js/lib/rem.js"></script><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="renderer" content="webkit"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="screen-orientation" content="portrait"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="screen-orientation" content="portrait"><meta name="x5-orientation" content="portrait"><meta name="full-screen" content="yes"><meta name="keywords" content="机器猫商城,工程机械设备,工业车辆作业平台,起重机,推土机,挖掘机,装载机,压路机,挖掘机配件,破碎锤配件,装载机配件,推土机配件,压路机配件,起重机配件,叉车配件,平台及手动设备配件"><meta name="description" content="机器猫是第1家工程机械网络交易平台,专注机械产品及后市场业务,实现整机销售,配件交易,品牌直营,自助服务的直连直通,一站满足您的需求，尽享“更多、更快、更便宜”的购物体验。赢得实惠,分享成功,实现商机,创造财富！咨询电话：400-887-5190"><title>安徽机器猫</title><link rel="stylesheet" href="../../assets/css/style.css?v=2da8ada283"></head><body><div class="machmall-wrapper"><div class="swiper-regist swiper-container"><div class="swiper-wrapper"><div class="swiper-slide"><div class="register"><div class="header-fixed"><div class="machmall-header black-bg"><a href="" class="header-back"></a><h3 class="header-title"><a href="">注册</a></h3><a href="" class="back-home"></a></div></div><div class="machmall-container"><div class="regist-box"><div class="shop-into-form"><form action=""><div class="form-input-box clearfix"><input type="text" class="form-input-sty none-tit name-length" placeholder="汉字、字母、数字组合的用户名"></div><div class="form-input-box clearfix"><input type="text" class="form-input-sty none-tit" placeholder="手机号"></div><div class="form-input-box clearfix"><input type="text" class="form-input-sty none-tit" placeholder="手机验证码"> <a href="javascript:void(0)" class="get-code-btn phone-regist-code">获取验证码</a></div><div class="form-input-box clearfix"><input type="password" class="form-input-sty none-tit" placeholder="密码"></div><div class="form-input-box clearfix"><input type="password" class="form-input-sty none-tit" placeholder="确认密码"></div><div class="i-have-read choose-argeement">我已认真阅读并同意 <a href="javascript:void(0)" class="machmall-agreement">《机器猫会员注册协议》</a></div><a href="javascript:void(0)" class="login-btn user-reigst-btn">完成注册</a></form><a href="choose_login_way.html" class="i-have-account">已有账号？<span class="to-login">登录</span></a></div></div></div></div></div><div class="swiper-slide"><div class="machmall-into-argeement"><div class="header-fixed"><div class="machmall-header black-bg"><a href="javascript:void(0)" class="header-back back-form"></a><h3 class="header-title"><a href="">机器猫平台入驻协议</a></h3><a href="" class="header-user"></a></div></div><div class="argeement-content"><div class="argeement-tit">1.确认并接受</div>微店有权根据需要不时地依照本协议约定方式就本协议的有关约定和/或本服务内容进行变更。一旦本协议和/或本服务内容发生变更，微店将会在该变更内容确定后，以微店客户端更新的方式向用户公布，您知悉并认可微店无需另行单独通知您。<div class="argeement-tit">2.服务内容</div>您应不时关注本协议及本服务有关内容，以便掌握任何变动情况。如果您不同意微店变更的内容，您应主动停止使用本服务。如果您在变更内容通告后7天内未主动停止使用本服务，则视为您接受本协议和/或本服务的变更，变更内容通告后您如果仍继续使用本服务亦构成您对有关变更内容的接受与认可。如您针对变更内容有异议，您应立即停止使用全部本服务，且您应在上述约定期限内主动停止使用本服务。<div class="argeement-tit">3.用户使用基本原则</div>微店有权根据需要不时地依照本协议约定方式就本协议的有关约定和/或本服务内容进行变更。一旦本协议和/或本服务内容发生变更，微店将会在该变更内容确定后，以微店客户端更新的方式向用户公布，您知悉并认可微店无需另行单独通知您。</div></div></div></div></div></div><script src="../../assets/js/lib/swiper.min.js"></script><script src="../../assets/js/lib/zepto.min.js"></script><script src="../../assets/js/machmall.public.js"></script><script src="../../assets/js/tips.js"></script><script>
+
+    //getInputValNull('.user-reigst-btn','.regist-box .form-input-sty');
+    var mySwiper = new Swiper('.swiper-regist',{
+        longSwipes:false,
+        shortSwipes:false
+    })
+    $('.machmall-agreement').tap(function(){
+        mySwiper.slideTo(1, 500, false);//切换到第二个slide，速度为0.5秒
+    })
+    $('.back-form').tap(function(){
+        mySwiper.slideTo(0, 500, false);//切换到第二个slide，速度为0.5秒
+    })
+    /*账号密码注册 */
+    $('.user-reigst-btn').tap(function () {
+        if(!$('.regist-box .form-input-sty').eq(0).val()) {
+            toast('exist_user');
+        }else if($('.regist-box .form-input-sty').eq(0).val().length>20||numReg.test($('.regist-box .form-input-sty').eq(0).val())){
+            toast('username_length');
+        }else if(!$('.regist-box .form-input-sty').eq(1).val()||!phoneReg.test($('.regist-box .form-input-sty').eq(1).val())){
+            toast('error_phone');
+        }else if(!$('.regist-box .form-input-sty').eq(2).val()){
+            toast('null_validateCode');
+        }else if($('.regist-box .form-input-sty').eq(2).val()!='1234'){
+            toast('validate_Code');
+        }else if(!passReg.test($('.regist-box .form-input-sty').eq(3).val())){
+            toast('error_pass');
+        }else if($('.regist-box .form-input-sty').eq(3).val()!=$('.regist-box .form-input-sty').eq(4).val()){
+            toast('error_againPass');
+        }else{
+            toast('regist_success');
+            setTimeout(function () {
+                window.location.href='regist_success.html';
+            },2000)
+
+        }
+    })
+
+    /*获取验证码*/
+    var s=true;
+    $('.phone-regist-code').tap(function (ev) {
+        ev.preventDefault();
+        var i= 60;
+        var t=$(this);
+        if(!$('.regist-box .form-input-sty').eq(1).val()||!phoneReg.test($('.regist-box .form-input-sty').eq(1).val())){
+            toast('error_phone');
+            return;
+        }
+
+        if(s){
+            s=false;
+            var plsSecond= setInterval(function(){
+                i--;
+                t.text(i+'s后重新获取');
+                t.css({background:'#d8d8d8'});
+                if(i==0){
+                    s=true;
+                    clearInterval(plsSecond);
+                    t.text('获取验证码');
+                    t.css({background:'#dd2727'});
+                    i=60;
+                }
+            },1000);
+
+        }
+    })
+</script></body></html>
